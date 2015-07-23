@@ -7,7 +7,7 @@ gem 'carrierwave'
 gem 'figaro', '~> 1.1.1'
 gem 'fog', '~> 1.32.0'
 gem 'mini_magick', '~> 4.2.7'
-
+gem 'devise', '~> 3.5.1'
 
 gem 'rails', '4.2.3'
 gem 'sqlite3', group: :development
