@@ -4,8 +4,9 @@ ruby '2.2.2'
 gem 'better_errors'
 gem 'bootstrap-sass'
 gem 'carrierwave'
-gem 'fog-aws', '~> 0.7.3'
+gem 'figaro', '~> 1.1.1'
 gem 'fog', '~> 1.32.0'
+
 
 gem 'rails', '4.2.3'
 gem 'sqlite3', group: :development
