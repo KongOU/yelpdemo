@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Yelpdemo</title>
+    <%= render 'layouts/jquery' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -10,9 +11,18 @@
 
   <%= render 'layouts/navbar' %>
   <div class="container-fluid">
+
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+        <div class="alert alert-<%= name == 'notice' ? 'success' : 'danger' %> alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= content_tag :div, msg, id: 'flash_#{name}' %>
+        </div>
+      <% end %>
+    <% end %>
+
     <%= yield %>
     <%= render 'layouts/footer' %>
   </div>
-
 </body>
 </html>
